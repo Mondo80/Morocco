@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morocco - Marché Amazigh Marocain</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Morocco</div>
+        <nav>
+            <ul>
+                <li><a href="#home" data-lang="home">Accueil</a></li>
+                <li><a href="#products" data-lang="products">Produits</a></li>
+                <li><a href="#vendors" data-lang="vendors">Vendeurs</a></li>
+                <li><a href="#about" data-lang="about">À Propos</a></li>
+                <li><a href="#contact" data-lang="contact">Contact</a></li>
+            </ul>
+            <div class="header-tools">
+                <input type="text" id="search-bar" placeholder="Rechercher..." data-lang-placeholder="search">
+                <button id="cart-btn" data-lang="cart">Panier (<span id="cart-count">0</span>)</button>
+                <button id="theme-toggle" data-lang="dark-mode">Mode Sombre</button>
+                <select id="language-select">
+                    <option value="fr">Français</option>
+                    <option value="en">English</option>
+                    <option value="ru">Русский</option>
+                    <option value="zh">中文</option>
+                    <option value="es">Español</option>
+                    <option value="ar">العربية</option>
+                </select>
+            </div>
+        </nav>
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">×</span>
+                <h2 data-lang="cart-title">Votre Panier</h2>
+                <ul id="cart-items"></ul>
+                <p data-lang="cart-total">Total : <span id="cart-total">0 MAD</span></p>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero animate">
+        <img src="https://images.unsplash.com/photo-1519996409144-56c88c537aa7?q=80&w=1974&auto=format&fit=crop" alt="Médina de Marrakech" class="hero-image">
+        <h1 data-lang="welcome">Bienvenue chez Morocco</h1>
+        <p data-lang="hero-text">L’artisanat Amazigh et les trésors du Maroc, directement des montagnes de l’Atlas.</p>
+        <a href="#products" class="btn" data-lang="explore">Explorer le Marché</a>
+    </section>
+
+    <section id="products" class="products animate">
+        <h2 data-lang="products-title">Nos Produits Phares</h2>
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" data-product="tapis">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Tapis Amazigh">
+                    <h3 data-lang="tapis-title">Tapis Amazigh</h3>
+                    <p data-lang="tapis-price">À partir de 600 MAD</p>
+                    <button class="btn-small add-to-cart" data-price="600" data-lang="add-to-cart">Ajouter au Panier</button>
+                </div>
+                <div class="carousel-item" data-product="huile">
+                    <img src="https://images.unsplash.com/photo-1612198543268-e5677349b2b6?q=80&w=2070&auto=format&fit=crop" alt="Huile d'Argan">
+                    <h3 data-lang="huile-title">Huile d’Argan Bio</h3>
+                    <p data-lang="huile-price">À partir de 180 MAD</p>
+                    <button class="btn-small add-to-cart" data-price="180" data-lang="add-to-cart">Ajouter au Panier</button>
+                </div>
+                <div class="carousel-item" data-product="bijoux">
+                    <img src="https://images.unsplash.com/photo-1606760227091-3dd44d7e6726?q=80&w=2070&auto=format&fit=crop" alt="Bijoux Berbères">
+                    <h3 data-lang="bijoux-title">Bijoux Berbères</h3>
+                    <p data-lang="bijoux-price">À partir de 350 MAD</p>
+                    <button class="btn-small add-to-cart" data-price="350" data-lang="add-to-cart">Ajouter au Panier</button>
+                </div>
+                <div class="carousel-item" data-product="tajine">
+                    <img src="https://images.unsplash.com/photo-1608500733965-5e8f758f9372?q=80&w=2070&auto=format&fit=crop" alt="Tajine Marocain">
+                    <h3 data-lang="tajine-title">Tajine Traditionnel</h3>
+                    <p data-lang="tajine-price">À partir de 250 MAD</p>
+                    <button class="btn-small add-to-cart" data-price="250" data-lang="add-to-cart">Ajouter au Panier</button>
+                </div>
+            </div>
+            <button class="carousel-prev">◄</button>
+            <button class="carousel-next">►</button>
+        </div>
+    </section>
+
+    <section id="vendors" class="vendors animate">
+        <h2 data-lang="vendors-title">Rencontrez Nos Vendeurs</h2>
+        <div class="vendor-grid">
+            <div class="vendor-item">
+                <img src="https://images.unsplash.com/photo-1571211407078-e88046639d8b?q=80&w=2070&auto=format&fit=crop" alt="Artisan à Fès">
+                <h3>Fatima</h3>
+                <p data-lang="fatima-desc">Spécialiste des tapis Amazigh</p>
+                <a href="#" class="btn-small" data-lang="see-products">Voir ses Produits</a>
+            </div>
+            <div class="vendor-item">
+                <img src="https://images.unsplash.com/photo-1598967119778-e5677349b2b6?q=80&w=2070&auto=format&fit=crop" alt="Producteur d'huile">
+                <h3>Hassan</h3>
+                <p data-lang="hassan-desc">Producteur d’huiles bio</p>
+                <a href="#" class="btn-small" data-lang="see-products">Voir ses Produits</a>
+            </div>
+            <div class="vendor-item">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd44d7e6726?q=80&w=2070&auto=format&fit=crop" alt="Bijoutière">
+                <h3>Amina</h3>
+                <p data-lang="amina-desc">Bijoutière berbère</p>
+                <a href="#" class="btn-small" data-lang="see-products">Voir ses Produits</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about animate">
+        <h2 data-lang="about-title">À Propos de Morocco</h2>
+        <p data-lang="about-text">Morocco est une plateforme dédiée à la mise en valeur de l’artisanat et des produits marocains, avec une touche unique Amazigh. Notre mission est de connecter les artisans des montagnes de l’Atlas aux acheteurs du monde entier, en célébrant la richesse culturelle du Maroc.</p>
+    </section>
+
+    <section id="contact" class="contact animate">
+        <h2 data-lang="contact-title">Contactez-nous</h2>
+        <form>
+            <input type="text" placeholder="Votre Nom" data-lang-placeholder="your-name" required>
+            <input type="email" placeholder="Votre Email" data-lang-placeholder="your-email" required>
+            <textarea placeholder="Votre Message" data-lang-placeholder="your-message" required></textarea>
+            <button type="submit" class="btn" data-lang="send">Envoyer</button>
+        </form>
+        <p>Email : <a href="mailto:elmundo80@gmail.com">elmundo80@gmail.com</a></p>
+    </section>
+
+    <footer>
+        <p data-lang="footer">© 2025 Morocco - Le Marché Amazigh Marocain. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Chatbot IA -->
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+            <span data-lang="chatbot-title">Morocco AI</span>
+            <button id="chatbot-toggle">−</button>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div id="chatbot-messages"></div>
+            <input type="text" id="chatbot-input" placeholder="Posez une question..." data-lang-placeholder="chatbot-placeholder">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9e9d8;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f9e9d8;
+}
+
+header {
+    background-color: #1a3c5a;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode header {
+    background-color: #0f2436;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e07b39;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-right: 35px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e07b39;
+}
+
+.header-tools {
+    display: flex;
+    gap: 10px;
+}
+
+#search-bar {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+#cart-btn, #theme-toggle {
+    padding: 5px 10px;
+    background-color: #e07b39;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+body.dark-mode #cart-btn, body.dark-mode #theme-toggle {
+    background-color: #c9652f;
+}
+
+#language-select {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #e07b39;
+    color: white;
+    border: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+}
+
+body.dark-mode .modal-content {
+    background-color: #2a2a2a;
+    color: #f9e9d8;
+}
+
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#cart-items {
+    list-style: none;
+    margin: 20px 0;
+}
+
+#cart-total {
+    font-weight: bold;
+}
+
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+    color: white;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero p {
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    background-color: #e07b39;
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #c9652f;
+}
+
+.products {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+body.dark-mode .products {
+    background-color: #2a2a2a;
+}
+
+.products h2 {
+    font-size: 42px;
+    margin-bottom: 50px;
+    color: #1a3c5a;
+}
+
+body.dark-mode .products h2 {
+    color: #e07b39;
+}
+
+.carousel {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 25%;
+    padding: 20px;
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item h3 {
+    margin: 15px 0 10px;
+    color: #1a3c5a;
+}
+
+body.dark-mode .carousel-item h3 {
+    color: #e07b39;
+}
+
+.carousel-item p {
+    color: #e07b39;
+    font-weight: bold;
+}
+
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #1a3c5a;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+body.dark-mode .carousel-prev, body.dark-mode .carousel-next {
+    background-color: #0f2436;
+}
+
+.carousel-prev {
+    left: 15px;
+}
+
+.carousel-next {
+    right: 15px;
+}
+
+.btn-small {
+    display: inline-block;
+    background-color: #1a3c5a;
+    color: white;
+    padding: 8px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+}
+
+body.dark-mode .btn-small {
+    background-color: #0f2436;
+}
+
+.btn-small:hover {
+    background-color: #e07b39;
+}
+
+.vendors {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f9e9d8;
+}
+
+body.dark-mode .vendors {
+    background-color: #1a1a1a;
+}
+
+.vendors h2 {
+    font-size: 42px;
+    margin-bottom: 50px;
+    color: #1a3c5a;
+}
+
+body.dark-mode .vendors h2 {
+    color: #e07b39;
+}
+
+.vendor-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.vendor-item {
+    background-color: white;
+    padding: 25px;
+    border: 2px dashed #e07b39;
+    border-radius: 10px;
+    width: 280px;
+    transition: transform 0.3s;
+}
+
+body.dark-mode .vendor-item {
+    background-color: #2a2a2a;
+}
+
+.vendor-item:hover {
+    transform: scale(1.05);
+}
+
+.vendor-item img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.vendor-item h3 {
+    color: #1a3c5a;
+}
+
+body.dark-mode .vendor-item h3 {
+    color: #e07b39;
+}
+
+.about {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+body.dark-mode .about {
+    background-color: #2a2a2a;
+}
+
+.about h2 {
+    font-size: 42px;
+    margin-bottom: 30px;
+    color: #1a3c5a;
+}
+
+body.dark-mode .about h2 {
+    color: #e07b39;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+.contact {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #1a3c5a;
+}
+
+body.dark-mode .contact {
+    background-color: #0f2436;
+}
+
+.contact h2 {
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact input, .contact textarea {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+}
+
+body.dark-mode .contact input, body.dark-mode .contact textarea {
+    background-color: #2a2a2a;
+    color: #f9e9d8;
+}
+
+.contact textarea {
+    height: 150px;
+}
+
+.contact button {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.contact p {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.contact a {
+    color: #e07b39;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #1a3c5a;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-top: 4px solid #e07b39;
+    font-size: 16px;
+}
+
+body.dark-mode footer {
+    background-color: #0f2436;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body[lang="ar"] {
+    direction: rtl;
+    text-align: right;
+}
+
+body[lang="ar"] nav ul {
+    flex-direction: row-reverse;
+}
+
+body[lang="ar"] .header-tools {
+    flex-direction: row-reverse;
+}
+
+body[lang="ar"] .carousel-prev {
+    right: 15px;
+    left: auto;
+}
+
+body[lang="ar"] .carousel-next {
+    left: 15px;
+    right: auto;
+}
+
+/* Chatbot Styles */
+.chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 300;
+}
+
+body.dark-mode .chatbot {
+    background-color: #2a2a2a;
+}
+
+.chatbot-header {
+    background-color: #e07b39;
+    color: white;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chatbot-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.chatbot-body {
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: block;
+}
+
+.chatbot-body.hidden {
+    display: none;
+}
+
+#chatbot-messages {
+    margin-bottom: 10px;
+}
+
+.chatbot-message {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.chatbot-message.user {
+    background-color: #e07b39;
+    color: white;
+    text-align: right;
+}
+
+.chatbot-message.bot {
+    background-color: #1a3c5a;
+    color: white;
+}
+
+body.dark-mode .chatbot-message.bot {
+    background-color: #0f2436;
+}
+
+#chatbot-input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+// Données de traduction organisées par langue
+const translations = {
+    fr: {
+        home: "Accueil", products: "Produits", vendors: "Vendeurs", about: "À Propos", contact: "Contact",
+        welcome: "Bienvenue chez Morocco", "hero-text": "L’artisanat Amazigh et les trésors du Maroc, directement des montagnes de l’Atlas.",
+        explore: "Explorer le Marché", "products-title": "Nos Produits Phares", "tapis-title": "Tapis Amazigh",
+        "tapis-price": "À partir de 600 MAD", "huile-title": "Huile d’Argan Bio", "huile-price": "À partir de 180 MAD",
+        "bijoux-title": "Bijoux Berbères", "bijoux-price": "À partir de 350 MAD", "tajine-title": "Tajine Traditionnel",
+        "tajine-price": "À partir de 250 MAD", details: "Détails", "vendors-title": "Rencontrez Nos Vendeurs",
+        "fatima-desc": "Spécialiste des tapis Amazigh", "hassan-desc": "Producteur d’huiles bio", "amina-desc": "Bijoutière berbère",
+        "see-products": "Voir ses Produits", "about-title": "À Propos de Morocco",
+        "about-text": "Morocco est une plateforme dédiée à la mise en valeur de l’artisanat et des produits marocains, avec une touche unique Amazigh. Notre mission est de connecter les artisans des montagnes de l’Atlas aux acheteurs du monde entier, en célébrant la richesse culturelle du Maroc.",
+        "contact-title": "Contactez-nous", "your-name": "Votre Nom", "your-email": "Votre Email", "your-message": "Votre Message",
+        send: "Envoyer", footer: "© 2025 Morocco - Le Marché Amazigh Marocain. Tous droits réservés.",
+        search: "Rechercher...", cart: "Panier", "cart-title": "Votre Panier", "cart-total": "Total", "add-to-cart": "Ajouter au Panier", "dark-mode": "Mode Sombre",
+        "chatbot-title": "Morocco AI", "chatbot-placeholder": "Posez une question..."
+    },
+    en: {
+        home: "Home", products: "Products", vendors: "Vendors", about: "About", contact: "Contact",
+        welcome: "Welcome to Morocco", "hero-text": "Amazigh craftsmanship and treasures of Morocco, straight from the Atlas Mountains.",
+        explore: "Explore the Market", "products-title": "Our Featured Products", "tapis-title": "Amazigh Rug",
+        "tapis-price": "Starting at 600 MAD", "huile-title": "Organic Argan Oil", "huile-price": "Starting at 180 MAD",
+        "bijoux-title": "Berber Jewelry", "bijoux-price": "Starting at 350 MAD", "tajine-title": "Traditional Tajine",
+        "tajine-price": "Starting at 250 MAD", details: "Details", "vendors-title": "Meet Our Vendors",
+        "fatima-desc": "Specialist in Amazigh rugs", "hassan-desc": "Producer of organic oils", "amina-desc": "Berber jeweler",
+        "see-products": "See Their Products", "about-title": "About Morocco",
+        "about-text": "Morocco is a platform dedicated to showcasing Moroccan craftsmanship and products, with a unique Amazigh touch. Our mission is to connect Atlas Mountain artisans with buyers worldwide, celebrating Morocco’s cultural richness.",
+        "contact-title": "Contact Us", "your-name": "Your Name", "your-email": "Your Email", "your-message": "Your Message",
+        send: "Send", footer: "© 2025 Morocco - The Moroccan Amazigh Market. All rights reserved.",
+        search: "Search...", cart: "Cart", "cart-title": "Your Cart", "cart-total": "Total", "add-to-cart": "Add to Cart", "dark-mode": "Dark Mode",
+        "chatbot-title": "Morocco AI", "chatbot-placeholder": "Ask a question..."
+    },
+    ru: {
+        home: "Главная", products: "Продукты", vendors: "Продавцы", about: "О нас", contact: "Контакты",
+        welcome: "Добро пожаловать в Morocco", "hero-text": "Амазигское ремесло и сокровища Марокко прямо из гор Атласа.",
+        explore: "Исследовать рынок", "products-title": "Наши лучшие продукты", "tapis-title": "Амазигский ковёр",
+        "tapis-price": "От 600 MAD", "huile-title": "Органическое аргановое масло", "huile-price": "От 180 MAD",
+        "bijoux-title": "Берберские украшения", "bijoux-price": "От 350 MAD", "tajine-title": "Традиционный тажин",
+        "tajine-price": "От 250 MAD", details: "Подробности", "vendors-title": "Познакомьтесь с нашими продавцами",
+        "fatima-desc": "Специалист по амазигским коврам", "hassan-desc": "Производитель органических масел", "amina-desc": "Берберский ювелир",
+        "see-products": "Посмотреть их продукцию", "about-title": "О Morocco",
+        "about-text": "Morocco — это платформа, посвящённая продвижению марокканских ремёсел и продуктов с уникальным амазигским оттенком. Наша миссия — соединять ремесленников гор Атласа с покупателями по всему миру, прославляя культурное богатство Марокко.",
+        "contact-title": "Свяжитесь с нами", "your-name": "Ваше имя", "your-email": "Ваш email", "your-message": "Ваше сообщение",
+        send: "Отправить", footer: "© 2025 Morocco - Марокканский амазигский рынок. Все права защищены.",
+        search: "Поиск...", cart: "Корзина", "cart-title": "Ваша корзина", "cart-total": "Итого", "add-to-cart": "Добавить в корзину", "dark-mode": "Тёмный режим",
+        "chatbot-title": "Morocco AI", "chatbot-placeholder": "Задайте вопрос..."
+    },
+    zh: {
+        home: "首页", products: "产品", vendors: "卖家", about: "关于", contact: "联系",
+        welcome: "欢迎来到Morocco", "hero-text": "阿马齐格工艺品和摩洛哥的宝藏，直接来自阿特拉斯山脉。",
+        explore: "探索市场", "products-title": "我们的特色产品", "tapis-title": "阿马齐格地毯",
+        "tapis-price": "起价600 MAD", "huile-title": "有机阿甘油", "huile-price": "起价180 MAD",
+        "bijoux-title": "柏柏尔珠宝", "bijoux-price": "起价350 MAD", "tajine-title": "传统塔吉锅",
+        "tajine-price": "起价250 MAD", details: "详情", "vendors-title": "认识我们的卖家",
+        "fatima-desc": "阿马齐格地毯专家", "hassan-desc": "有机油生产者", "amina-desc": "柏柏尔珠宝匠",
+        "see-products": "查看他们的产品", "about-title": "关于Morocco",
+        "about-text": "Morocco是一个致力于展示摩洛哥工艺品和产品的平台，带有独特的阿马齐格特色。我们的使命是将阿特拉斯山脉的工匠与全球买家连接起来，庆祝摩洛哥的文化财富。",
+        "contact-title": "联系我们", "your-name": "您的姓名", "your-email": "您的邮箱", "your-message": "您的消息",
+        send: "发送", footer: "© 2025 Morocco - 摩洛哥阿马齐格市场。保留所有权利。",
+        search: "搜索...", cart: "购物车", "cart-title": "您的购物车", "cart-total": "总计", "add-to-cart": "加入购物车", "dark-mode": "暗模式",
+        "chatbot-title": "Morocco AI", "chatbot-placeholder": "问一个问题..."
+    },
+    es: {
+        home: "Inicio", products: "Productos", vendors: "Vendedores", about: "Acerca de", contact: "Contacto",
+        welcome: "Bienvenido a Morocco", "hero-text": "Artesanía amazigh y tesoros de Marruecos, directamente desde las montañas del Atlas.",
+        explore: "Explorar el Mercado", "products-title": "Nuestros Productos Destacados", "tapis-title": "Alfombra Amazigh",
+        "tapis-price": "Desde 600 MAD", "huile-title": "Aceite de Argán Orgánico", "huile-price": "Desde 180 MAD",
+        "bijoux-title": "Joyería Bereber", "bijoux-price": "Desde 350 MAD", "tajine-title": "Tajine Tradicional",
+        "tajine-price": "Desde 250 MAD", details: "Detalles", "vendors-title": "Conoce a Nuestros Vendedores",
+        "fatima-desc": "Especialista en alfombras amazigh", "hassan-desc": "Productor de aceites orgánicos", "amina-desc": "Joyera bereber",
+        "see-products": "Ver sus Productos", "about-title": "Acerca de Morocco",
+        "about-text": "Morocco es una plataforma dedicada a destacar la artesanía y los productos marroquíes, con un toque único amazigh. Nuestra misión es conectar a los artesanos de las montañas del Atlas con compradores de todo el mundo, celebrando la riqueza cultural de Marruecos.",
+        "contact-title": "Contáctanos", "your-name": "Tu Nombre", "your-email": "Tu Email", "your-message": "Tu Mensaje",
+        send: "Enviar", footer: "© 2025 Morocco - El Mercado Amazigh Marroquí. Todos los derechos reservados.",
+        search: "Buscar...", cart: "Carrito", "cart-title": "Tu Carrito", "cart-total": "Total", "add-to-cart": "Añadir al Carrito", "dark-mode": "Modo Oscuro",
+        "chatbot-title": "Morocco AI", "chatbot-placeholder": "Haz una pregunta..."
+    },
+    ar: {
+        home: "الرئيسية", products: "المنتجات", vendors: "البائعون", about: "حول", contact: "اتصل بنا",
+        welcome: "مرحبًا بكم في Morocco", "hero-text": "الحرف الأمازيغية وكنوز المغرب، مباشرة من جبال الأطلس.",
+        explore: "استكشف السوق", "products-title": "منتجاتنا المميزة", "tapis-title": "سجادة أمازيغية",
+        "tapis-price": "ابتداءً من 600 درهم", "huile-title": "زيت الأركان العضوي", "huile-price": "ابتداءً من 180 درهم",
+        "bijoux-title": "مجوهرات بربرية", "bijoux-price": "ابتداءً من 350 درهم", "tajine-title": "طاجين تقليدي",
+        "tajine-price": "ابتداءً من 250 درهم", details: "تفاصيل", "vendors-title": "تعرف على بائعينا",
+        "fatima-desc": "متخصصة في السجاد الأمازيغي", "hassan-desc": "منتج الزيوت العضوية", "amina-desc": "صائغة بربرية",
+        "see-products": "شاهد منتجاتهم", "about-title": "حول Morocco",
+        "about-text": "Morocco منصة مكرسة لإبراز الحرف والمنتجات المغربية، مع لمسة أمازيغية فريدة. مهمتنا هي ربط الحرفيين في جبال الأطلس بالمشترين في جميع أنحاء العالم، والاحتفاء بالثراء الثقافي للمغرب.",
+        "contact-title": "اتصل بنا", "your-name": "اسمك", "your-email": "بريدك الإلكتروني", "your-message": "رسالتك",
+        send: "إرسال", footer: "© 2025 Morocco - السوق الأمازيغي المغربي. جميع الحقوق محفوظة.",
+        search: "البحث...", cart: "سلة التسوق", "cart-title": "سلة التسوق الخاصة بك", "cart-total": "المجموع", "add-to-cart": "إضافة إلى السلة", "dark-mode": "الوضع الداكن",
+        "chatbot-title": "Morocco AI", "chatbot-placeholder": "اطرح سؤالاً..."
+    }
+};
+
+// Réponses du chatbot organisées par langue
+const chatbotResponses = {
+    fr: {
+        tapis: "Nos tapis Amazigh sont faits à la main par des artisans experts. À partir de 600 MAD !",
+        huile: "L’huile d’argan bio est un produit naturel de haute qualité, à partir de 180 MAD.",
+        bijoux: "Découvrez nos bijoux berbères uniques, à partir de 350 MAD.",
+        tajine: "Le tajine traditionnel est parfait pour cuisiner, à partir de 250 MAD.",
+        contact: "Pour plus d’infos, écrivez-nous à elmundo80@gmail.com !",
+        default: "Je suis Morocco AI ! Posez-moi une question sur nos produits ou le Maroc."
+    },
+    en: {
+        tapis: "Our Amazigh rugs are handmade by expert artisans. Starting at 600 MAD!",
+        huile: "Organic argan oil is a high-quality natural product, starting at 180 MAD.",
+        bijoux: "Discover our unique Berber jewelry, starting at 350 MAD.",
+        tajine: "The traditional tajine is perfect for cooking, starting at 250 MAD.",
+        contact: "For more info, write to us at elmundo80@gmail.com!",
+        default: "I’m Morocco AI! Ask me about our products or Morocco."
+    },
+    ru: {
+        tapis: "Наши амазигские ковры ручной работы от мастеров. От 600 MAD!",
+        huile: "Органическое аргановое масло — натуральный продукт высокого качества, от 180 MAD.",
+        bijoux: "Откройте для себя уникальные берберские украшения, от 350 MAD.",
+        tajine: "Традиционный тажин идеален для готовки, от 250 MAD.",
+        contact: "Для дополнительной информации пишите на elmundo80@gmail.com!",
+        default: "Я Morocco AI! Задайте мне вопрос о наших продуктах или Марокко."
+    },
+    zh: {
+        tapis: "我们的阿马齐格地毯由专家手工制作。起价600 MAD！",
+        huile: "有机阿甘油是高品质的天然产品，起价180 MAD。",
+        bijoux: "探索我们独特的柏柏尔珠宝，起价350 MAD。",
+        tajine: "传统塔吉锅非常适合烹饪，起价250 MAD。",
+        contact: "如需更多信息，请写信至elmundo80@gmail.com！",
+        default: "我是Morocco AI！问我关于我们的产品或摩洛哥的问题。"
+    },
+    es: {
+        tapis: "Nuestras alfombras amazigh son hechas a mano por artesanos expertos. ¡Desde 600 MAD!",
+        huile: "El aceite de argán orgánico es un producto natural de alta calidad, desde 180 MAD.",
+        bijoux: "Descubre nuestras joyas bereberes únicas, desde 350 MAD.",
+        tajine: "El tajine tradicional es perfecto para cocinar, desde 250 MAD.",
+        contact: "Para más información, escríbenos a elmundo80@gmail.com!",
+        default: "¡Soy Morocco AI! Pregúntame sobre nuestros productos o Marruecos."
+    },
+    ar: {
+        tapis: "سجادنا الأمازيغي مصنوع يدويًا من قبل حرفيين خبراء. ابتداءً من 600 درهم!",
+        huile: "زيت الأركان العضوي منتج طبيعي عالي الجودة، ابتداءً من 180 درهم.",
+        bijoux: "اكتشف مجوهراتنا البربرية الفريدة، ابتداءً من 350 درهم.",
+        tajine: "الطاجين التقليدي مثالي للطبخ، ابتداءً من 250 درهم.",
+        contact: "لمزيد من المعلومات، اكتب لنا على elmundo80@gmail.com!",
+        default: "أنا Morocco AI! اسألني عن منتجاتنا أو المغرب."
+    }
+};
+
+/**
+ * Met à jour le contenu du site en fonction de la langue sélectionnée
+ * @param {string} lang - Code de la langue (ex. : 'fr', 'en')
+ */
+function updateLanguage(lang) {
+    try {
+        const elements = document.querySelectorAll('[data-lang]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-lang');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+
+        const placeholders = document.querySelectorAll('[data-lang-placeholder]');
+        placeholders.forEach(element => {
+            const key = element.getAttribute('data-lang-placeholder');
+            if (translations[lang] && translations[lang][key]) {
+                element.placeholder = translations[lang][key];
+            }
+        });
+
+        document.documentElement.setAttribute('lang', lang);
+        document.body.setAttribute('lang', lang);
+    } catch (error) {
+        console.error('Erreur lors de la mise à jour de la langue :', error);
+    }
+}
+
+// Initialisation des éléments DOM avec gestion d’erreurs
+const elements = {
+    languageSelect: document.getElementById('language-select'),
+    carouselInner: document.querySelector('.carousel-inner'),
+    carouselItems: document.querySelectorAll('.carousel-item'),
+    prevBtn: document.querySelector('.carousel-prev'),
+    nextBtn: document.querySelector('.carousel-next'),
+    cartBtn: document.getElementById('cart-btn'),
+    cartModal: document.getElementById('cart-modal'),
+    cartItemsList: document.getElementById('cart-items'),
+    cartCount: document.getElementById('cart-count'),
+    cartTotal: document.getElementById('cart-total'),
+    closeModal: document.querySelector('.close'),
+    searchBar: document.getElementById('search-bar'),
+    themeToggle: document.getElementById('theme-toggle'),
+    form: document.querySelector('form'),
+    chatbotMessages: document.getElementById('chatbot-messages'),
+    chatbotInput: document.getElementById('chatbot-input'),
+    chatbotToggle: document.getElementById('chatbot-toggle'),
+    chatbotBody: document.getElementById('chatbot-body')
+};
+
+// Vérification que les éléments essentiels existent
+if (!elements.languageSelect || !elements.carouselInner || !elements.cartBtn) {
+    console.error('Un ou plusieurs éléments DOM essentiels sont manquants.');
+} else {
+    // Initialisation de la langue par défaut
+    updateLanguage('fr');
+
+    // Gestion du changement de langue
+    elements.languageSelect.addEventListener('change', () => updateLanguage(elements.languageSelect.value));
+
+    // Gestion du carrousel
+    let currentIndex = 0;
+    function updateCarousel() {
+        try {
+            const itemWidth = elements.carouselItems[0]?.offsetWidth || 0;
+            elements.carouselInner.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        } catch (error) {
+            console.error('Erreur lors de la mise à jour du carrousel :', error);
+        }
+    }
+
+    elements.nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % elements.carouselItems.length;
+        updateCarousel();
+    });
+
+    elements.prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + elements.carouselItems.length) % elements.carouselItems.length;
+        updateCarousel();
+    });
+
+    // Gestion du panier
+    let cart = [];
+    function updateCart() {
+        try {
+            elements.cartItemsList.innerHTML = '';
+            let total = 0;
+            cart.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = `${item.title} - ${item.price} MAD`;
+                elements.cartItemsList.appendChild(li);
+                total += item.price;
+            });
+            elements.cartCount.textContent = cart.length;
+            elements.cartTotal.textContent = `${total} MAD`;
+        } catch (error) {
+            console.error('Erreur lors de la mise à jour du panier :', error);
+        }
+    }
+
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', () => {
+            try {
+                const product = button.closest('.carousel-item');
+                const title = product.querySelector('h3').textContent;
+                const price = parseInt(button.getAttribute('data-price'), 10);
+                if (!title || isNaN(price)) throw new Error('Données produit invalides');
+                cart.push({ title, price });
+                updateCart();
+            } catch (error) {
+                console.error('Erreur lors de l’ajout au panier :', error);
+            }
+        });
+    });
+
+    elements.cartBtn.addEventListener('click', () => {
+        elements.cartModal.style.display = 'block';
+    });
+
+    elements.closeModal.addEventListener('click', () => {
+        elements.cartModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === elements.cartModal) {
+            elements.cartModal.style.display = 'none';
+        }
+    });
+
+    // Gestion de la recherche
+    elements.searchBar.addEventListener('input', function() {
+        try {
+            const query = this.value.toLowerCase();
+            elements.carouselItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                item.style.display = title.includes(query) ? 'block' : 'none';
+            });
+        } catch (error) {
+            console.error('Erreur lors de la recherche :', error);
+        }
+    });
+
+    // Gestion du mode sombre
+    elements.themeToggle.addEventListener('click', () => {
+        try {
+            document.body.classList.toggle('dark-mode');
+            const lang = elements.languageSelect.value;
+            elements.themeToggle.textContent = document.body.classList.contains('dark-mode') ? 
+                translations[lang]['light-mode'] || 'Mode Clair' : translations[lang]['dark-mode'];
+        } catch (error) {
+            console.error('Erreur lors du changement de thème :', error);
+        }
+    });
+
+    // Gestion du formulaire
+    elements.form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        try {
+            const lang = elements.languageSelect.value;
+            alert(translations[lang]['your-message'] + ' ! elmundo80@gmail.com.');
+        } catch (error) {
+            console.error('Erreur lors de la soumission du formulaire :', error);
+        }
+    });
+
+    // Gestion du chatbot
+    /**
+     * Ajoute un message au chatbot
+     * @param {string} message - Le texte à afficher
+     * @param {string} className - Classe CSS ('user' ou 'bot')
+     */
+    function addMessage(message, className) {
+        try {
+            const div = document.createElement('div');
+            div.className = `chatbot-message ${className}`;
+            div.textContent = message;
+            elements.chatbotMessages.appendChild(div);
+            elements.chatbotMessages.scrollTop = elements.chatbotMessages.scrollHeight;
+        } catch (error) {
+            console.error('Erreur lors de l’ajout d’un message au chatbot :', error);
+        }
+    }
+
+    /**
+     * Génère une réponse IA basé sur l’entrée utilisateur
+     * @param {string} input - Message de l’utilisateur
+     * @param {string} lang - Langue actuelle
+     * @returns {string} Réponse du chatbot
+     */
+    function getAIResponse(input, lang) {
+        try {
+            const lowerInput = input.toLowerCase();
+            if (lowerInput.includes('tapis') || lowerInput.includes('rug') || lowerInput.includes('ковёр') || lowerInput.includes('地毯') || lowerInput.includes('alfombra') || lowerInput.includes('سجادة')) {
+                return chatbotResponses[lang].tapis;
+            } else if (lowerInput.includes('huile') || lowerInput.includes('oil') || lowerInput.includes('масло') || lowerInput.includes('油') || lowerInput.includes('aceite') || lowerInput.includes('زيت')) {
+                return chatbotResponses[lang].huile;
+            } else if (lowerInput.includes('bijoux') || lowerInput.includes('jewelry') || lowerInput.includes('украшения') || lowerInput.includes('珠宝') || lowerInput.includes('joyería') || lowerInput.includes('مجوهرات')) {
+                return chatbotResponses[lang].bijoux;
+            } else if (lowerInput.includes('tajine') || lowerInput.includes('طاجين')) {
+                return chatbotResponses[lang].tajine;
+            } else if (lowerInput.includes('contact') || lowerInput.includes('контакт') || lowerInput.includes('联系') || lowerInput.includes('contacto') || lowerInput.includes('اتصل')) {
+                return chatbotResponses[lang].contact;
+            }
+            return chatbotResponses[lang].default;
+        } catch (error) {
+            console.error('Erreur dans la génération de la réponse IA :', error);
+            return chatbotResponses[lang].default;
+        }
+    }
+
+    elements.chatbotInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter' && this.value.trim()) {
+            const userMessage = this.value.trim();
+            addMessage(userMessage, 'user');
+            const lang = elements.languageSelect.value;
+            const botResponse = getAIResponse(userMessage, lang);
+            setTimeout(() => addMessage(botResponse, 'bot'), 500);
+            this.value = '';
+        }
+    });
+
+    elements.chatbotToggle.addEventListener('click', () => {
+        elements.chatbotBody.classList.toggle('hidden');
+        elements.chatbotToggle.textContent = elements.chatbotBody.classList.contains('hidden') ? '+' : '−';
+    });
+
+    // Message d'accueil initial du chatbot
+    const initialLang = elements.languageSelect.value;
+    addMessage(chatbotResponses[initialLang].default, 'bot');
+}
